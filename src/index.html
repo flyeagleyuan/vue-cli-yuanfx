@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Title</title>
+    <style>
+      :root {
+        font-size: 24px;
+      }
+      body {
+        font-size: 0.24rem;
+      }
+
+      ul {
+        margin: 0 0 20px;
+        overflow: hidden;
+      }
+
+      li {
+        list-style: none;
+        float: left;
+        width: 33.33%;
+      }
+
+      h3 {
+        text-align: center;
+        margin: 0 0 10px;
+      }
+    </style>
+    <script>
+      function changeView() {
+        let width = document.body.clientWidth || document.documentElement.clientWidth;
+
+        if (width < 320) {
+          let screen = window.screen;
+          width = screen[screen.width > screen.height ? 'height' : 'width'];
+          if (width < 320) width = 320;
+        }
+
+        if (width > 750) width = 750;
+
+        document.getElementsByTagName('html')[0].style.setProperty('font-size', (100 * width) / 750 + 'px');
+        document.getElementsByTagName('body')[0].style.setProperty('visibility', 'visible');
+
+        if (!width) {
+          setTimeout(changeView, 20);
+        }
+      }
+
+      window.onload = function() {
+        changeView();
+      };
+    </script>
+  </head>
+  <body>
+    <h3>页面</h3>
+    <ul>
+      <li><a href="./welcome.html?name=to Vue Scaffold">欢迎页</a></li>
+      <li><a href="./scrollDemo.html?user=1&token=000000">滚动页面demo</a></li>
+    </ul>
+
+    <h3>表格示例</h3>
+    <ul>
+      <li><a href="./table/type.html">type类型的使用</a></li>
+      <li><a href="./table/cut-row-columns.html">表格切割行列</a></li>
+      <li><a href="./table/fixed.html">表格固定定位</a></li>
+      <li><a href="./table/highlight.html">表格展示高亮行</a></li>
+      <li><a href="./table/nested.html">表格嵌套示例</a></li>
+      <li><a href="./table/comprehensive.html">表格综合示例</a></li>
+    </ul>
+
+    <h3>复选框示例</h3>
+    <ul>
+      <li><a href="./checkbox.html">复选框示例</a></li>
+    </ul>
+  </body>
+</html>
