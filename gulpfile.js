@@ -62,7 +62,7 @@ gulp.task('upload', cb => {
     sshConfig: {
       host: '10.15.97.30',
       username: 'root',
-      password: 'jsoproject',
+      password: '',
     },
   });
   setTimeout(() => {
